@@ -20,6 +20,23 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
+        path: 'home',
+        loadChildren: () =>
+          import('../pages/home/home.module').then((m) => m.HomePageModule),
+      },
+      {
+        path: 'event',
+        loadChildren: () =>
+          import('../pages/event/event.module').then((m) => m.EventPageModule),
+      },
+      {
+        path: 'settings',
+        loadChildren: () =>
+          import('../pages/settings/settings.module').then(
+            (m) => m.SettingsPageModule
+          ),
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
@@ -27,8 +44,8 @@ const routes: Routes = [
     ]
   },
   {
-    path: '',
-    redirectTo: '/tabs/tab1',
+    path: '**',
+    redirectTo: '/signin',
     pathMatch: 'full'
   }
 ];
